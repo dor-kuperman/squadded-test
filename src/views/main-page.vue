@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import json from "../posts.json";
+import json from "../posts-to-test.json";
 import postList from "../components/posts-list.vue";
 export default {
   name: "mainPage",

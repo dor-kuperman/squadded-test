@@ -1,7 +1,7 @@
 <template>
   <div class="post-card flex">
     <div v-on:click="goToUserPage" class="user-info flex">
-      <img  v-bind:src="post.owner.picture" />
+      <img v-bind:src="post.owner.picture" />
       {{ post.owner.firstName }}
     </div>
     <div class="product-details flex">
@@ -21,6 +21,7 @@
                 ? 'comments-counter'
                 : 'comments-counter-over-100'
             "
+            ref="commentCounter"
             >{{ commentsCounter }}</span
           >
           <i
@@ -84,8 +85,30 @@ export default {
       userID: this.post.owner.id,
     };
   },
-  computed: {},
+  mounted() {
+    this.isTextAndClassCorrect();
+  },
   methods: {
+    isTextAndClassCorrect() {
+      // getting the comments number element from DOM
+      const styleClassOfComments = this.$refs.commentCounter.className;
+      const numOfComments = this.$refs.commentCounter.innerHTML;
+
+      if (numOfComments < 100) {
+        return [styleClassOfComments, numOfComments];
+      } else if (numOfComments >= 100) {
+        return [styleClassOfComments, numOfComments];
+      }
+    },
+    getText() {
+      const numOfComments = this.$refs.commentCounter.innerHTML;
+      return numOfComments;
+    },
+    getClass() {
+      const styleClassOfComments = this.$refs.commentCounter.className;
+      return styleClassOfComments;
+    },
+
     goToUserPage() {
       this.$router.push(`/user/${this.userID}`);
     },

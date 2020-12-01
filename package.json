@@ -8,10 +8,12 @@
     "unit": "jest"
   },
   "dependencies": {
+    "@babel/core": "^7.12.9",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/vue-fontawesome": "^2.0.0",
     "axios": "^0.21.0",
+    "babel-jest": "^26.6.3",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.19.0",
     "vue": "^3.0.3",
@@ -19,16 +21,17 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
+    "@vue/babel-preset-app": "^4.5.9",
     "@vue/cli-plugin-router": "^4.5.9",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
-    "@vue/test-utils": "^2.0.0-beta.11",
+    "@vue/test-utils": "^2.0.0-beta.12",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
-    "vue-jest": "^5.0.0-alpha.6"
+    "vue-jest": "^5.0.0-alpha.7"
   },
   "browserslist": [
     "> 1%",
